@@ -872,21 +872,24 @@ footer a:hover {
   color: var(--accent);
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   body {
     cursor: auto;
   }
+
   #cursor,
   #cursor-ring {
     display: none;
   }
+
   nav {
     padding: 16px 24px;
   }
+
   nav.scrolled {
     padding: 12px 24px;
   }
+
   #hero,
   #sobre,
   #skills,
@@ -895,13 +898,20 @@ footer a:hover {
     padding-left: 24px;
     padding-right: 24px;
   }
+
+  .hero-content {
+    margin-left: 0;
+  }
+
   .social-sidebar {
     display: none;
   }
+
   .sobre-inner {
     grid-template-columns: 1fr;
     gap: 48px;
   }
+
   footer {
     padding: 24px;
     flex-direction: column;

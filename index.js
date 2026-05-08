@@ -1,11 +1,7 @@
-  // ========================================
 // 1. Atualizar ano no footer
-// ========================================
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ========================================
 // 2. Cursor customizado
-// ========================================
 const cursor = document.getElementById("cursor");
 const ring = document.getElementById("cursor-ring");
 
@@ -28,9 +24,7 @@ links.forEach((el) => {
   });
 });
 
-// ========================================
-// 3. Partículas animadas
-// ========================================
+// Partículas animadas
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 let canvasWidth, canvasHeight;
@@ -58,16 +52,13 @@ function animateParticles() {
   // Limpar canvas
   ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
-  // Desenhar e mover cada partícula
   particles.forEach((particle) => {
     particle.x += particle.speedX;
     particle.y += particle.speedY;
 
-    // Quicar nas bordas
     if (particle.x < 0 || particle.x > canvasWidth) particle.speedX *= -1;
     if (particle.y < 0 || particle.y > canvasHeight) particle.speedY *= -1;
 
-    // Desenhar círculo
     ctx.beginPath();
     ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
     ctx.fillStyle = "rgba(220,255,125,0.25)";
@@ -99,9 +90,7 @@ function animateParticles() {
 
 animateParticles();
 
-// ========================================
 // 4. Navbar encolher ao fazer scroll
-// ========================================
 window.addEventListener("scroll", () => {
   const navbar = document.getElementById("navbar");
   if (window.scrollY > 50) {
@@ -111,9 +100,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ========================================
 // 5. Revelar elementos ao fazer scroll (fade-up animation)
-// ========================================
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -131,7 +118,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.12 }
+  { threshold: 0.12 },
 );
 
 // Observar todos os elementos com fade-up ou stagger
